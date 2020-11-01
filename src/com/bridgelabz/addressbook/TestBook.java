@@ -18,7 +18,8 @@ public class TestBook {
 			System.out.println("enter 1 for person detail");
 			System.out.println("enter 2 for edit");
 			System.out.println("enter 3 for delete");
-			System.out.println("enter 4 for exit");
+			System.out.println("enter 4 for check duplicate");
+			System.out.println("enter 5 to exit");
 			cs = scan.nextInt();
 			switch (cs) {
 			case 1:
@@ -35,6 +36,11 @@ public class TestBook {
 				ab.deletePerson(s);
 				break;
 			case 4:
+				System.out.println("Enter name to check duplicate");
+				s = scan.next();
+				ab.checkDuplicate(s);
+				break;
+			case 5:
 				System.exit(0);
 			default:
 				System.out.println("Enter the correct option");

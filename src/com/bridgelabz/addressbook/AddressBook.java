@@ -61,4 +61,15 @@ public class AddressBook {
 		}
 	}
 
+	// method to check duplicate name
+	public void checkDuplicate(String name) {
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (name.equals(p.getName())) {
+				p.print();
+				System.out.println("Person name already exit");
+			}
+		}
+	}
+
 }
