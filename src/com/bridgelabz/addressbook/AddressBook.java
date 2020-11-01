@@ -1,7 +1,10 @@
 package com.bridgelabz.addressbook;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 	ArrayList<PersonInfo> persons;
@@ -100,6 +103,15 @@ public class AddressBook {
 				p.print();
 			}
 		}
+	}
+
+	// method to sort by person name
+	public void sortByName(String name) {
+		List<PersonInfo> sortedList = persons.stream().sorted(Comparator.comparing(PersonInfo::getName).reversed())
+				.collect(Collectors.toList());
+
+		sortedList.forEach(System.out::println);
+
 	}
 
 }
