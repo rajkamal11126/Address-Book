@@ -10,7 +10,6 @@ public class AddressBook {
 		persons = new ArrayList<PersonInfo>();
 	}
 
-	// method to add details
 	public void addPerson() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter your name");
@@ -27,7 +26,6 @@ public class AddressBook {
 		String zip = scan.nextLine();
 		System.out.println("Enter your email");
 		String email = scan.nextLine();
-
 		// construct new person object
 		PersonInfo p = new PersonInfo(name, add, pNum, city, state, zip, email);
 		persons.add(p);
@@ -39,6 +37,18 @@ public class AddressBook {
 			PersonInfo p = (PersonInfo) persons.get(i);
 			if (n.equals(p.getName())) {
 				p.print();
+			}
+		}
+	}
+
+	// method to delete person details
+	public void deletePerson(String n) {
+		// delete person record by name by iterating over array list
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (n.equals(p.getName())) {
+				p.print();
+				persons.remove(i);
 			}
 		}
 	}
