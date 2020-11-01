@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class TestBook {
 	public static void main(String[] args) {
-		addressBookEntry();
-	}
-
-	public static void addressBookEntry() {
 		Scanner scan = new Scanner(System.in);
 		AddressBook ab = new AddressBook();
 		String s;
