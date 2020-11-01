@@ -92,4 +92,14 @@ public class AddressBook {
 		}
 	}
 
+	// method to search by phone number
+	public void searchByPhoneNum(String phNumber) {
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (phNumber.equals(p.getPhoneNum())) {
+				p.print();
+			}
+		}
+	}
+
 }
