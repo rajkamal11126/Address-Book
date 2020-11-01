@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class TestBook {
 	public static void main(String[] args) {
+		addressBookEntry();
+	}
+
+	public static void addressBookEntry() {
 		Scanner scan = new Scanner(System.in);
 		AddressBook ab = new AddressBook();
 		String s;
@@ -15,7 +19,6 @@ public class TestBook {
 			System.out.println("enter 2 for edit");
 			System.out.println("enter 3 for delete");
 			System.out.println("enter 4 for exit");
-
 			cs = scan.nextInt();
 			switch (cs) {
 			case 1:
@@ -38,4 +41,5 @@ public class TestBook {
 			}
 		}
 	}
+
 }

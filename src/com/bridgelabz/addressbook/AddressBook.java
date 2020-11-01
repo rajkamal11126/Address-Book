@@ -11,45 +11,54 @@ public class AddressBook {
 	}
 
 	public void addPerson() {
+
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter your name");
-		String name = scan.nextLine();
+		String name = scan.next();
+		for (int i = 0; i < persons.size(); i++) {
+			if (name.equals(persons.get(i).getName())) {
+				System.out.println("name is already exist");
+				TestBook.addressBookEntry();
+			}
+		}
 		System.out.println("Enter your address");
-		String add = scan.nextLine();
+		String add = scan.next();
 		System.out.println("Enter your phone number");
 		Long pNum = scan.nextLong();
 		System.out.println("Enter your city");
-		String city = scan.nextLine();
+		String city = scan.next();
 		System.out.println("Enter your state");
-		String state = scan.nextLine();
+		String state = scan.next();
 		System.out.println("Enter your zip");
-		String zip = scan.nextLine();
+		String zip = scan.next();
 		System.out.println("Enter your email");
-		String email = scan.nextLine();
+		String email = scan.next();
+
 		// construct new person object
 		PersonInfo p = new PersonInfo(name, add, pNum, city, state, zip, email);
 		persons.add(p);
 	}
 
 	// method to edit the person details
-	public void editPerson(String n) {
+	public void editPerson(String name) {
 		for (int i = 0; i < persons.size(); i++) {
 			PersonInfo p = (PersonInfo) persons.get(i);
-			if (n.equals(p.getName())) {
+			if (name.equals(p.getName())) {
 				p.print();
 			}
 		}
 	}
 
 	// method to delete person details
-	public void deletePerson(String n) {
+	public void deletePerson(String name) {
 		// delete person record by name by iterating over array list
 		for (int i = 0; i < persons.size(); i++) {
 			PersonInfo p = (PersonInfo) persons.get(i);
-			if (n.equals(p.getName())) {
+			if (name.equals(p.getName())) {
 				p.print();
 				persons.remove(i);
 			}
 		}
 	}
+
 }
