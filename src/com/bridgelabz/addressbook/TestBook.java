@@ -19,7 +19,8 @@ public class TestBook {
 			System.out.println("enter 2 for edit");
 			System.out.println("enter 3 for delete");
 			System.out.println("enter 4 for check duplicate");
-			System.out.println("enter 5 to exit");
+			System.out.println("enter 5 for seach person by city name");
+			System.out.println("enter 6 to exit");
 			cs = scan.nextInt();
 			switch (cs) {
 			case 1:
@@ -41,6 +42,11 @@ public class TestBook {
 				ab.checkDuplicate(s);
 				break;
 			case 5:
+				System.out.println("Enter city name");
+				s = scan.next();
+				ab.searchByCity(s);
+				break;
+			case 6:
 				System.exit(0);
 			default:
 				System.out.println("Enter the correct option");

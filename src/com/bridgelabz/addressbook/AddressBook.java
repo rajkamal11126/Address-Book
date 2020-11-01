@@ -72,4 +72,14 @@ public class AddressBook {
 		}
 	}
 
+	// method to search by city name
+	public void searchByCity(String city) {
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (city.equals(p.getCity())) {
+				p.print();
+			}
+		}
+	}
+
 }
