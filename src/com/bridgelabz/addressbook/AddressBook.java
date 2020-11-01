@@ -82,4 +82,14 @@ public class AddressBook {
 		}
 	}
 
+	// method to search by state name
+	public void searchByState(String state) {
+		for (int i = 0; i < persons.size(); i++) {
+			PersonInfo p = (PersonInfo) persons.get(i);
+			if (state.equals(p.getState())) {
+				p.print();
+			}
+		}
+	}
+
 }
